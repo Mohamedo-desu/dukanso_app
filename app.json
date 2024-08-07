@@ -3,8 +3,7 @@
     "name": "Dukanso",
     "slug": "Dukanso",
     "version": "1.0.0",
-
-    "scheme": "Dukanso",
+    "scheme": "dukanso",
     "web": {
       "bundler": "metro",
       "output": "static",
@@ -12,38 +11,66 @@
     },
     "plugins": [
       "expo-router",
+      "expo-secure-store",
       [
-        "expo-dev-launcher",
+        "expo-updates",
         {
-          "launchMode": "most-recent"
+          "username": "mohamedo-desu"
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "",
+          "color": "#5ABB56"
+        }
+      ],
+      [
+        "@sentry/react-native/expo",
+        {
+          "url": "https://sentry.io/",
+          "organization": "mohamedo-apps-desu",
+          "project": "dukanso"
         }
       ]
     ],
     "experiments": {
       "typedRoutes": true,
-
       "tsconfigPaths": true
     },
-
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-
     "userInterfaceStyle": "light",
-
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#5ABB56"
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.mohamedodesu.dukanso"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
+      },
+      "package": "com.mohamedodesu.dukanso"
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "b807865f-a82b-4210-85e1-c9756c84278c"
       }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/b807865f-a82b-4210-85e1-c9756c84278c"
     }
   }
 }
